@@ -1,0 +1,22 @@
+[project]
+name = "llm-safety-mcp"
+version = "0.1.0"
+description = "MCP server for LLM safety checks (prompt injection, PII detection, sanitization)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=1.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.scripts]
+llm-safety-mcp = "llm_safety_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
